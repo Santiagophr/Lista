@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/imgs">
+        <file>imagens/binary-code.png</file>
+        <file>imagens/technical-support.png</file>
+        <file>imagens/icons8-c++-50.png</file>
+        <file>imagens/icons8-c++-250.png</file>
+        <file>imagens/icons8-c++-500.png</file>
+        <file>imagens/icons8-qt-50.png</file>
+        <file>imagens/icons8-qt-250.png</file>
+        <file>imagens/icons8-qt-500.png</file>
+        <file>imagens/programing.png</file>
+        <file>imagens/programming-language.png</file>
+    </qresource>
+</RCC>
