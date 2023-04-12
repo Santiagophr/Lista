@@ -34,6 +34,10 @@ private slots:
 
     void on_pushButtonAcessarPOsicao_clicked();
 
+    void on_pushButtonInserirPosicao_clicked();
+
+    void on_pushButtonRetirarPosicao_clicked();
+
 private:
     ped::LLSE lista;
     Ui::MainWindow *ui;

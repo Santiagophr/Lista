@@ -14,14 +14,20 @@ private:
 public:
     LLSE();
     bool estaVazia()const;
+
     void inserirInicio(int elemento);
     int retirarInicio();
     int acessarInicio()const;
+
     QString obterDadosLista()const;
+
     int acessarFim()const;
     void inserirFim(int elemento);
     int retirarFim();
+
     int acessarPosicao(int posicao);
+    void inserirPosicao(int elemento, int posicao);
+    int retirarPosicao(int posicao);
 
     int getQuantidadeElementos() const;
 

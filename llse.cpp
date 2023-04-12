@@ -130,5 +130,50 @@ int LLSE::acessarPosicao(int posicao)
     }
     return aux->getDado();
 }
+void LLSE::inserirPosicao(int elemento, int posicao)
+{
+    try {
+        if(posicao < 0 || posicao > quantidadeElementos) throw QString("A posição desejada não existe");
+        if(posicao == 0) return inserirInicio(elemento);
+        if(posicao == quantidadeElementos) return inserirFim(elemento);
 
+        No *aux = new No(elemento);
+        No *anterior = inicio;
+
+        for(int pos = 0; pos < posicao - 1; pos++)
+        {
+            anterior = anterior->getProximo();
+        }
+
+        aux->setProximo(anterior->getProximo());
+        anterior->setProximo(aux);
+        quantidadeElementos++;
+    }
+    catch (std::bad_alloc &erro)
+    {
+        throw QString("Nó não foi criado!");
+    }
+}
+int LLSE::retirarPosicao(int posicao)
+{
+    if(estaVazia()) throw QString("A lista está vazia!");
+    if(posicao < 0 || posicao >= quantidadeElementos) throw QString("A posição desejada não existe");
+    if(posicao == 0) return retirarInicio();
+    if(posicao == quantidadeElementos - 1) return retirarFim();
+
+    No *aux = inicio;
+    No *anterior = nullptr;
+
+    for(int pos = 0; pos < posicao; pos++)
+    {
+        anterior = aux;
+        aux = aux->getProximo();
+    }
+    anterior->setProximo(aux->getProximo());
+    int valor = aux->getDado();
+    delete aux;
+    quantidadeElementos--;
+
+    return valor;
+}
 }
