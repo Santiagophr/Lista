@@ -225,13 +225,32 @@
      </item>
     </layout>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>50</y>
+      <width>131</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../Downloads/WhatsApp Image 2023-04-12 at 10.01.43.jpeg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>360</x>
       <y>270</y>
       <width>361</width>
-      <height>28</height>
+      <height>24</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -286,13 +305,13 @@
      <string>R P</string>
     </property>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
       <x>360</x>
       <y>240</y>
       <width>131</width>
-      <height>28</height>
+      <height>24</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -315,7 +334,7 @@
      <x>0</x>
      <y>0</y>
      <width>738</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>

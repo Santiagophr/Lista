@@ -111,14 +111,13 @@ void MainWindow::on_pushButtonAcessarPOsicao_clicked()
             saida = lista.acessarInicio();
             ui->lineEditValor->setText(QString::number(saida));
         }else{
-        if(!posicao) throw QString("POSICAO INVALIDA");
+            if(!posicao) throw QString("POSICAO INVALIDA");
             posicao = lista.acessarPosicao(posicao);
             ui->lineEditValor->setText(QString::number(posicao));
         }
     } catch (QString &erro) {
         QMessageBox::information(this, "ERRO DO SISTEMA", erro);
     }
-
 }
 
 
@@ -135,7 +134,7 @@ void MainWindow::on_pushButtonInserirPosicao_clicked()
             ui->lineEditQuantidadeElementos->setText(QString::number(lista.getQuantidadeElementos()));
             ui->lineEditValor->clear();
         }else{
-        if(!valor || !posicao) throw QString("POSICAO OU VALOR INVALIDO");
+            if(!valor || !posicao) throw QString("POSICAO OU VALOR INVALIDO");
             lista.inserirPosicao(valor, posicao);
             ui->lineEditValor->clear();
             ui->textEditDadosLista->setText(lista.obterDadosLista());
@@ -152,7 +151,6 @@ void MainWindow::on_pushButtonInserirPosicao_clicked()
 
 void MainWindow::on_pushButtonRetirarPosicao_clicked()
 {
-
     try {
         int posicao = ui->lineEditAcessarPosicao->text().toInt();
         if(lista.estaVazia()) throw QString("A lista já esta vazia!");
@@ -162,16 +160,14 @@ void MainWindow::on_pushButtonRetirarPosicao_clicked()
             ui->lineEditValor->setText(saida);
             ui->textEditDadosLista->setText(lista.obterDadosLista());
             ui->lineEditQuantidadeElementos->setText(QString::number(lista.getQuantidadeElementos()));
-        }else{
-        if(!posicao) throw QString("VALOR INVALIDO");
-        QString saida = QString::number(lista.retirarPosicao(posicao));
-        ui->lineEditValor->setText(saida);
-        ui->textEditDadosLista->setText(lista.obterDadosLista());
-        ui->lineEditQuantidadeElementos->setText(QString::number(lista.getQuantidadeElementos()));
-    }
-    catch (QString &erro)
-    {
+        }else {
+            if(!posicao) throw QString("VALOR INVALIDO");
+            QString saida = QString::number(lista.retirarPosicao(posicao));
+            ui->lineEditValor->setText(saida);
+            ui->textEditDadosLista->setText(lista.obterDadosLista());
+            ui->lineEditQuantidadeElementos->setText(QString::number(lista.getQuantidadeElementos()));
+        }
+    } catch (QString &erro) {
         QMessageBox::information(this,"ERRO DO SISTEMA",erro);
     }
 }
-
